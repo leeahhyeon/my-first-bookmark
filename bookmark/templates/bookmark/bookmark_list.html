@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Bookmark List</title>
+    <style type="text/css">
+        #title { float: left }
+    </style>
+</head>
+<body>
+<div id="content">
+    <img src="http://post.phinf.naver.net/20160829_203/1472481149557NV5Xx_JPEG/IyGedfVZjGfvQvoO9-S4Y6niYYlk.jpg" width="100" height="100">
+    <h1 id="title">북마크 목록</h1>
+    <h2>217230101 이아현</h2>
+    <img src="http://blogfiles.naver.net/20100810_58/maria1357_1281432547310MvDOY_jpg/tumblr_krlhpusivy1qzs56do1_500_maria1357.jpg">
+    <ul>
+        {% for bookmark in object_list %}
+            <li><a href="{% url 'detail' bookmark.id %}">{{ bookmark }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
